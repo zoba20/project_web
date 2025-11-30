@@ -1,3 +1,6 @@
+/* ======================== */
+/*        NAVBAR MAIN       */
+/* ======================== */
 .navbar {
   width: 100%;
   background: #1e63f9;
@@ -87,20 +90,74 @@
   color: #1e63f9;
 }
 
-/* استجابة الهواتف */
+/* ======================== */
+/*      SIDEBAR MENU        */
+/* ======================== */
+
+/* زر القائمة في الهاتف */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: white;
+  padding: 8px;
+  z-index: 10001;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px; /* مخفية */
+  width: 260px;
+  height: 100%;
+  background: #1e63f9;
+  padding: 25px 20px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10000;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 6px 0;
+}
+
+.sidebar .close-btn {
+  font-size: 30px;
+  cursor: pointer;
+  align-self: flex-end;
+  color: white;
+}
+
+/* إظهار القائمة */
+.sidebar.active {
+  right: 0;
+}
+
+/* ======================== */
+/*       MOBILE STYLE       */
+/* ======================== */
 @media (max-width: 768px) {
-  .navbar .nav-links {
-    display: none;
+
+  /* إظهار زر القائمة */
+  .menu-toggle {
+    display: block;
   }
+
+  /* إخفاء الروابط */
+  .navbar .nav-links,
+  .navbar .auth-buttons,
   .navbar .search-box {
-    order: 3;
-    width: 100%;
-    margin-top: 10px;
+    display: none !important;
   }
-  .navbar .auth-buttons {
-    order: 4;
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
+
+  /* ترتيب العناصر */
+  .navbar {
+    justify-content: space-between;
   }
 }
