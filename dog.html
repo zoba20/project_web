@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <title>كلاب — متجر الحيوانات</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/icofont.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="container" role="main">
+    <!-- تصنيفات الحيوانات -->
+    <section class="category-icons" style="text-align:center; margin:20px 0;">
+      <a href="bird.html"><img src="img/img1110.png" alt="طيور" width="100" height="100"></a>
+      <a href="fish.html"><img src="img/img1111.png" alt="أسماك" width="100" height="100"></a>
+      <a href="cat.html"><img src="img/img1112.png" alt="قطط" width="100" height="100"></a>
+      <a href="dog.html"><img src="img/img1113.png" alt="كلاب" width="100" height="100"></a>
+      <a href="hamster.html"><img src="img/img1114.png" alt="قوارض" width="100" height="100"></a>
+    </section>
+
+    <!-- شبكة الكلاب -->
+    <section class="products-grid">
+
+      <div class="product-card">
+        <img src="img/dogs/dog0.jpeg" alt="كلب 1">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog1.jpeg" alt="كلب 2">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog2.jpeg" alt="كلب 3">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog3.jpeg" alt="كلب 4">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog4.jpeg" alt="كلب 5">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog5.jpeg" alt="كلب 6">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog6.jpeg" alt="كلب 7">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="img/dogs/dog7.jpeg" alt="كلب 8">
+        <div class="info">
+          <h3 class="title">TWIX FOR PETS</h3>
+          <div class="price">سعر حسب الطلب</div>
+          <div class="actions">
+            <button class="btn add-to-cart">أضف إلى السلة</button>
+            <button class="btn ghost">تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    © جميع الحقوق محفوظة — متجر الحيوانات
+  </footer>
+
+  <script src="js/script.js?v=20251111151846" defer></script>
+  <script>
+    fetch('navbar.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not OK');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      })
+      .catch(err => {
+        console.warn('خطأ في تحميل شريط التنقل:', err);
+      });
+  </script>
+
+</body>
+</html>

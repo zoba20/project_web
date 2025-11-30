@@ -1,0 +1,102 @@
+/* ============================
+   Card Grid Container
+   ============================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto‑fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* ============================
+   Individual Card Styling
+   ============================ */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Ensures consistent height if you want footer aligned */
+  height: 100%;
+}
+
+/* ============================
+   Card Image
+   ============================ */
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Optional fixed height if you want uniform image heights */
+  /* height: 180px; */
+}
+
+/* ============================
+   Card Info (title, price, actions)
+   ============================ */
+.product-card .info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* make the info area grow */
+}
+
+.product-card .title {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.product-card .price {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: auto; /* push actions to bottom */
+}
+
+.product-card .actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.product-card .actions .btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.product-card .actions .btn.add-to-cart {
+  background: #1e63f9;
+  color: white;
+}
+
+.product-card .actions .btn.add-to-cart:hover {
+  background: #1456c8;
+}
+
+.product-card .actions .btn.ghost {
+  background: transparent;
+  border: 1px solid #1e63f9;
+  color: #1e63f9;
+}
+
+.product-card .actions .btn.ghost:hover {
+  background: #1e63f9;
+  color: white;
+}
+
+/* ============================
+   Responsive Tweaks
+   ============================ */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* single column on small screens */
+    padding: 10px 0;
+  }
+}

@@ -1,0 +1,64 @@
+<html  >
+<head>
+<meta charset="utf-8">
+	<title>form</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/icofont.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="stylesheet" href="css/style.css?v=20251111151846">
+</head>
+<body>
+<header class="header" role="banner">
+  <div class="brand">
+    <img src="img/logo.png" alt="شعار المتجر" onerror="this.style.display='none'">
+    <div>
+      <h1>متجر الحيوانات</h1>
+      <div style="font-size:12px;color:rgba(255,255,255,0.9)">أسلوب حديث — إعادة تصميم كامل</div>
+    </div>
+  </div>
+  <div class="search-wrap"><input id="search-input" type="search" placeholder="ابحث عن حيوان أو منتج..." aria-label="بحث"></div>
+  <div class="cart"><button class="btn ghost" onclick="location.href='pagehome.html#cart'">سلة</button><div id="cart-count" class="count">0</div></div>
+</header>
+<main class="container" role="main" id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <img src="img/hero.jpg" alt="حيوانات لطيفة" onerror="this.style.display='none'">
+    <div>
+      <h2 id="hero-title">مرحبًا بك في متجر الحيوانات</h2>
+      <p style="color:var(--muted)">تسوق أفضل الحيوانات الأليفة والملحقات. استكشف الكروت أدناه أو استخدم البحث السريع.</p>
+    </div>
+  </section>
+  <section class="products-grid" aria-live="polite">
+    
+        <article class="product-card" role="article">
+          <img data-src="img/img1112.png" src="img/img1112.png" loading="lazy" alt="#">
+          <div class="info">
+            <h3 class="title">#</h3>
+            <div class="price">سعر حسب الطلب</div>
+            <div class="actions">
+              <button class="btn add-to-cart" aria-label="أضف إلى السلة">أضف إلى السلة</button>
+              <button class="btn ghost details" aria-label="تفاصيل">تفاصيل</button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card" role="article">
+          <img data-src="img/img1.png" src="img/img1.png" loading="lazy" alt="#">
+          <div class="info">
+            <h3 class="title">#</h3>
+            <div class="price">سعر حسب الطلب</div>
+            <div class="actions">
+              <button class="btn add-to-cart" aria-label="أضف إلى السلة">أضف إلى السلة</button>
+              <button class="btn ghost details" aria-label="تفاصيل">تفاصيل</button>
+            </div>
+          </div>
+        </article>
+  </section>
+</main>
+<footer class="footer" role="contentinfo">
+  © جميع الحقوق محفوظة — متجر الحيوانات
+</footer>
+<script src="js/script.js?v=20251111151846" defer></script>
+</body>
+</html>
