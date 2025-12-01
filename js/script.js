@@ -1,3 +1,8 @@
+
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  if (sidebar) sidebar.classList.toggle("active");
+}
 // script.js - تحسين: بحث فوري، lazy load للصور إذا لم يدعم المتصفح، عداد سلة بسيط
 document.addEventListener('DOMContentLoaded', function(){
 
