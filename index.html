@@ -253,46 +253,33 @@
   <!-- ملفات JavaScript -->
   <script src="js/script.js" defer></script>
 
- <script>
-  const navbarContainer = document.getElementById('navbar-placeholder');
-  const navbarPath = 'navbar.html';
+<script>
+const navbarContainer = document.getElementById('navbar-placeholder');
+const navbarPath = 'navbar.html';
 
-  // دالة لتحميل الـ navbar من ملف خارجي
-  function loadNavbar() {
-    try {
-      // نحاول أولاً باستخدام fetch (في حالة السيرفر)
-      fetch(navbarPath)
-        .then(res => {
-          if (!res.ok) throw new Error('فشل في التحميل عبر fetch');
-          return res.text();
-        })
-        .then(html => navbarContainer.innerHTML = html)
-        .catch(() => {
-          // إذا فشل fetch (مثلاً في file://)، نجرب XMLHttpRequest
-          const xhr = new XMLHttpRequest();
-          xhr.open('GET', navbarPath, true);
-          xhr.onload = function () {
-            if (xhr.status === 200 || xhr.status === 0) {
-              navbarContainer.innerHTML = xhr.responseText;
-            } else {
-              console.error('فشل في تحميل navbar:', xhr.status);
-            }
-          };
-          xhr.onerror = () => console.error('حدث خطأ في قراءة الملف');
-          xhr.send();
-        });
-    } catch (err) {
-      console.error('خطأ عام أثناء تحميل navbar:', err);
-    }
-  }
+function loadNavbar() {
+  fetch(navbarPath)
+    .then(res => res.ok ? res.text() : Promise.reject('فشل في التحميل'))
+    .then(html => {
+      navbarContainer.innerHTML = html;
 
-  // تنفيذ التحميل
-  loadNavbar();
-   function toggleMenu() {
-  const sidebar = document.getElementById("sidebar");
-  if (sidebar) sidebar.classList.toggle("active");
+      // بعد تحميل navbar، نضيف الوظائف الخاصة بالقائمة
+      const menuToggle = navbarContainer.querySelector('.menu-toggle');
+      const sidebar = navbarContainer.querySelector('#sidebar');
+
+      if(menuToggle && sidebar){
+        menuToggle.addEventListener('click', ()=> sidebar.classList.toggle('active'));
+        const closeBtn = sidebar.querySelector('.close-btn');
+        if(closeBtn) closeBtn.addEventListener('click', ()=> sidebar.classList.remove('active'));
+      }
+    })
+    .catch(err => console.error(err));
 }
+
+// تحميل الـ navbar عند بدء الصفحة
+loadNavbar();
 </script>
+
 
 
 
